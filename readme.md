@@ -27,7 +27,9 @@ Activate some necessary core components:
 	public $components = array('RequestHandler', 'Session', 'Auth');
 
 Add some lines to your `beforeFilter` and configure at your taste:
-
+<blockquote>
+        <p>For example.</p>
+</blockquote>
 	$this->Auth->fields = array('username' => 'email', 'password' => 'passwd');
 	$this->Auth->loginAction = array('plugin' => 'users', 'controller' => 'users', 'action' => 'login', 'admin' => false);
 	$this->Auth->loginRedirect = '/';
