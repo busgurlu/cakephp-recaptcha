@@ -1,5 +1,7 @@
 # Recaptcha plugin for CakePHP #
+README is developing ... please wait.
 
+This is full of bullshits. No connection with Recaptcha plugin.
 Version 1.0 
 
 ## Installation ##
