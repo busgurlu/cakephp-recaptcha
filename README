@@ -1,0 +1,11 @@
+Test pre
+<pre>
+
+class Test {
+  public $testVariable = array();
+  public function testFunction() {
+    $testVariable = array('A' => array('B'));
+  }
+}
+
+</pre>
