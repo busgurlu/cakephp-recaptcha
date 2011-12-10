@@ -1,6 +1,6 @@
-# Users Plugin for CakePHP #
+# Recaptcha plugin for CakePHP #
 
-Version 1.1
+Version 1.0
 
 The users plugin is for allowing users to register and login manage their profile. It also allows admins to manage the users.
 
@@ -17,6 +17,10 @@ or
 	cake migration all -plugin users
 
 You will also need the [CakeDC Search plugin](http://github.com/CakeDC/search), just grab it and put it into your application's plugin folder.
+
+Test :
+	
+	$var array = array();
 
 Activate some necessary core components:
 
