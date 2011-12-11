@@ -6,22 +6,38 @@ Version 1.0
 
 ## Installation ##
 	
-	$var array = array();
 
+## Use ##
+You need add Recapcha.Recapcha component.
+Component will add Helper and Model injection.
 
-	this->Auth->fields = array('username' => 'email', 'password' => 'passwd');
-	$this->Auth->loginAction = array('plugin' => 'users', 'controller' => 'users', 'action' => 'login', 'admin' => false);
-	$this->Auth->loginRedirect = '/';
-	$this->Auth->logoutRedirect = '/';
-	$this->Auth->authError = __('Sorry, but you need to login to access this location.', true);
-	$this->Auth->loginError = __('Invalid e-mail / password combination.  Please try again', true);
-	$this->Auth->autoRedirect = false;
-	$this->Auth->userModel = 'Users.User';
-	$this->Auth->userScope = array('User.active' => 1);
+Controller file:
+
+### 1) Use with specific action -> works automagically ###
+Add this to your controller:
+	public $components = array('Recaptcha.Recaptcha' => array('actions' => array('add')));
+	
+### 1) Use without actions -> check recaptcha manualy ###
+	public $components = array('Recaptcha.Recaptcha'
+	
+	public function add() {
+		if ($this->request->is('post')) {
+    			if ($this->Recaptcha->verify()) {
+       			 // do something, save you data, login, whatever
+   			 } else {
+      			  // display the raw API error
+     				   $this->Session->setFlash($this->Recaptcha->error);
+  			  }
+		}
+	}
+	
+You need to set actions array as option for Recaptcha component.
+Because if recapcha wont pass, validation error will raise.
+
+View file:
+	echo $this->Recaptcha->display();
 
 ## What it is capable of ##
-
-You can use the plugin as it comes if you're happy with it or, more common, extend your app specific user implementation from the plugin.
 
 The plugin itself is already capable of:
 
