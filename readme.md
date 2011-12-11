@@ -98,4 +98,4 @@ Licensed under The MIT License
 Redistributions of files must retain the above copyright notice.
 Copyright 2010-2011
 
-[Lamanabie](http://cakephp.siotn.eu)
+[My blog](http://cakephp.siotn.eu)
