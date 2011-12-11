@@ -22,14 +22,14 @@ or if you have more Plugins you can include like this:
 You need add Recapcha.Recapcha component.
 Component will add Helper and Model injection.
 
-Controller file:
+### Controller file: ###
 
-### 1) Use with specific action -> works automagically ###
+#### 1) Use with specific action -> works automagically ####
 Add this to your controller:
 
 	public $components = array('Recaptcha.Recaptcha' => array('actions' => array('add')));
 	
-### 1) Use without actions -> check recaptcha manualy ###
+#### 2) Use without actions -> check recaptcha manualy ####
 
 	public $components = array('Recaptcha.Recaptcha'
 	
@@ -47,7 +47,7 @@ Add this to your controller:
 You need to set actions array as option for Recaptcha component.
 Because if recapcha wont pass, validation error will raise.
 
-View file:
+### View file: ###
 
 	echo $this->Recaptcha->display();
 
