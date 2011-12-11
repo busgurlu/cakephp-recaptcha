@@ -94,6 +94,8 @@ The plugin itself is already capable of:
 Copyright 2010-2011, [Lamanabie](http://cakephp.siotn.eu)
 
 ## Copyright ###
-Cakedc
+Licensed under The MIT License
+Redistributions of files must retain the above copyright notice.
 Copyright 2010-2011
-http://cakephp.siotn.eu
+
+[Lamanabie](http://cakephp.siotn.eu)
