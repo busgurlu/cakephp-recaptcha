@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Copyright 2009-2010, Cake Development Corporation (http://cakedc.com)
  *
@@ -16,59 +17,61 @@
  * @subpackage recaptcha.models.behaviors
  */
 class RecaptchaBehavior extends ModelBehavior {
-/**
- * Settings array
- *
- * @var array
- */
-	public $settings = array();
 
-/**
- * Default settings
- *
- * @var array
- */
-	public $defaults = array(
-		'errorField' => 'recaptcha');
+    /**
+     * Settings array
+     *
+     * @var array
+     */
+    public $settings = array();
 
-/**
- * Setup
- *
- * @param AppModel $model
- * @param array $settings
- */
-	public function setup(Model $Model, $settings = array()) {
-                //debug('oleee');
-		if (!isset($this->settings[$Model->alias])) {
-			$this->settings[$Model->alias] = $this->defaults;
-		}
-		$this->settings[$Model->alias] = array_merge($this->settings[$Model->alias], (is_array($settings) ? $settings : array()));
-	}
+    /**
+     * Default settings
+     *
+     * @var array
+     */
+    public $defaults = array(
+        'errorField' => 'recaptcha');
 
-/**
- * Validates the captcha responses status set by the component to the model
- *
- * @object Model instance
- * @return boolean
- * @see RecaptchaComponent::initialize()
- */
-	public function validateCaptcha(Model $Model) {
-                //debug($Model->recaptcha);
-                //$Model->validationErrors['daco'][0] = 'Error';
-		if (isset($Model->recaptcha)) {
-			$Model->invalidate($this->settings[$Model->alias]['errorField'], $Model->recaptchaError);
-		}
-		return true;
-	}
+    /**
+     * Setup
+     *
+     * @param AppModel $model
+     * @param array $settings
+     */
+    public function setup(Model $Model, $settings = array()) {
+        if (!isset($this->settings[$Model->alias])) {
+            $this->settings[$Model->alias] = $this->defaults;
+        }
+        $this->settings[$Model->alias] = array_merge($this->settings[$Model->alias], (is_array($settings) ? $settings : array()));
+        //debug($this->settings);
+    }
 
-/**
- * Validates the captcha
- *
- * @object Model instance
- * @return void;
- */
-	public function beforeValidate(Model $Model) {
-		$this->validateCaptcha($Model);
-		return true;
-	}
+    /**
+     * Validates the captcha responses status set by the component to the model
+     *
+     * @object Model instance
+     * @return boolean
+     * @see RecaptchaComponent::initialize()
+     */
+    public function validateCaptcha(Model $Model) {
+        //debug($Model->recaptcha);
+        //$Model->validationErrors['daco'][0] = 'Error';
+        if (isset($Model->recaptcha) && $Model->recaptcha == false) {
+            $Model->invalidate($this->settings[$Model->alias]['errorField'], $Model->recaptchaError);
+        }
+        return true;
+    }
+
+    /**
+     * Validates the captcha
+     *
+     * @object Model instance
+     * @return void;
+     */
+    public function beforeValidate(Model $Model) {
+        $this->validateCaptcha($Model);
+        return true;
+    }
+
 }
