@@ -5,7 +5,18 @@ This is full of bullshits. No connection with Recaptcha plugin.
 Version 1.0 
 
 ## Installation ##
+
+Copy plugin into app/Plugin directory
+Load plugin in app/Config/bootstrap file
+	CakePlugin::load('Recaptcha', array('bootstrap' => true));
+
+or if you have more Plugins you can include like this:
 	
+	CakePlugin::loadAll(array(
+	    'Users' => array('routes' => true),
+	    'AclManager' => array('bootstrap' => true),
+	    'Recaptcha' => array('bootstrap' => true)
+	));
 
 ## Use ##
 You need add Recapcha.Recapcha component.
@@ -15,9 +26,11 @@ Controller file:
 
 ### 1) Use with specific action -> works automagically ###
 Add this to your controller:
+
 	public $components = array('Recaptcha.Recaptcha' => array('actions' => array('add')));
 	
 ### 1) Use without actions -> check recaptcha manualy ###
+
 	public $components = array('Recaptcha.Recaptcha'
 	
 	public function add() {
@@ -35,6 +48,7 @@ You need to set actions array as option for Recaptcha component.
 Because if recapcha wont pass, validation error will raise.
 
 View file:
+
 	echo $this->Recaptcha->display();
 
 ## What it is capable of ##
