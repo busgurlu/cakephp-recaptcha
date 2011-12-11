@@ -42,7 +42,7 @@ Commponent add field recaptcha and validation to your Model on fly for this acti
 
 Add this to your controller:
 
-	public $components = array('Recaptcha.Recaptcha' => array('actions' => array('add')));
+	public $components = array('Recaptcha.Recaptcha' => array('actions' => array('add', 'delete')));
 	
 Add this to yout view:
 	
