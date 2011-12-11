@@ -17,7 +17,7 @@ or if you have more Plugins you can include like this:
 	    'Recaptcha' => array('bootstrap' => true)
 	));
 
-Do not call CakePlugin::loadAll(); beacuse yout bootstrap file will be not included and your plugin will not work correctly.
+Do not call only CakePlugin::loadAll(); beacuse yout bootstrap file will be not included and your plugin will not work correctly.
 
 To use the recaptcha plugin its required to modify these two lines in app/Plugins/recaptcha/Config/bootstrap.php file
 
