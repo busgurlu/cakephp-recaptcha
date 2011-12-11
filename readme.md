@@ -38,7 +38,7 @@ Component will add Helper and Model injection.
 ### Controller file: ###
 
 #### 1) Use with specific controller action or actions -> works automagically ####
-Commponent add field recaptcha and validation to your Model for this action.
+Commponent add field recaptcha and validation to your Model on fly for this action.
 
 Add this to your controller:
 
