@@ -1,5 +1,4 @@
 # Recaptcha plugin for CakePHP #
-README is developing ... please wait.
 
 Version 1.0 
 
