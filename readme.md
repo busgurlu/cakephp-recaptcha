@@ -7,6 +7,7 @@ Version 1.0
 
 Copy plugin into app/Plugin directory
 Add following lines in yout app/Config/bootstrap.php file
+
 	CakePlugin::load('Recaptcha', array('bootstrap' => true));
 
 or if you have more Plugins you can include like this:
