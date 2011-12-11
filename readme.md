@@ -67,8 +67,8 @@ You have to verify captcha manually in your controller.
 	
 
 ### Example of view file: ###
-	echo $this->Form->create($model);
-	echo $this->Form->input('username;
+	echo $this->Form->create('User');
+	echo $this->Form->input('username');
 	echo $this->Form->input('email');
 	echo $this->Recaptcha->display();
 	echo $this->Form->submit();
