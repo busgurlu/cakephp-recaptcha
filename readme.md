@@ -1,7 +1,6 @@
 # Recaptcha plugin for CakePHP #
 README is developing ... please wait.
 
-This is full of bullshits. No connection with Recaptcha plugin.
 Version 1.0 
 
 ## Installation ##
@@ -29,30 +28,33 @@ Add this to your controller:
 
 	public $components = array('Recaptcha.Recaptcha' => array('actions' => array('add')));
 	
-	Component add Recaptcha helper to yout controller automaticaly.
-	Component add to your Model validation of recaptcha, if recaptcha is worong it set error message to recaptcha field in your Model.
-	
-#### 2) Use without actions -> check recaptcha manualy ####
+Component add Recaptcha helper to yout controller automaticaly.
+Component add to your Model validation of recaptcha, if recaptcha is worong it set error message to recaptcha field in your Model.
 
-	public $components = array('Recaptcha.Recaptcha'
+#### 2) Use without actions -> check recaptcha manualy ####
+Component add Recaptcha helper to your controller automaticaly.
+
+	public $components = array('Recaptcha.Recaptcha');
 	
 	public function add() {
 		if ($this->request->is('post')) {
     			if ($this->Recaptcha->verify()) {
-       			 // do something, save you data, login, whatever
-   			 } else {
-      			  // display the raw API error
-     				   $this->Session->setFlash($this->Recaptcha->error);
-  			  }
+       				// do something, save you data, login, whatever
+   			} else {
+      				// display the raw API error
+     				$this->Session->setFlash($this->Recaptcha->error);
+  			}
 		}
 	}
 	
-You need to set actions array as option for Recaptcha component.
-Because if recapcha wont pass, validation error will raise.
 
 ### View file: ###
-
+	echo $this->Form->create($model);
+	echo $this->Form->input('username;
+	echo $this->Form->input('email');
 	echo $this->Recaptcha->display();
+	echo $this->Form->submit();
+	echo $this->Form->end();
 
 ## What it is capable of ##
 
