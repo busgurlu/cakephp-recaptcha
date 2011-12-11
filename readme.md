@@ -95,6 +95,11 @@ The plugin itself is already capable of:
 
 Copyright 2010-2011, [Lamanabie](http://cakephp.siotn.eu)
 
+Copyright 2009-2010, Cake Development Corporation
+
+Licensed under The MIT License
+Redistributions of files must retain the above copyright notice.
+
 ## Copyright ###
 Licensed under The MIT License
 Redistributions of files must retain the above copyright notice.
