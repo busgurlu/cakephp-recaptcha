@@ -36,16 +36,20 @@ Component will add Helper and Model injection.
 
 ### Controller file: ###
 
-#### 1) Use with specific action -> works automagically ####
+#### 1) Use with specific controller action or actions -> works automagically ####
+Commponent add field recaptcha and validation to your Model for this action.
+
 Add this to your controller:
 
 	public $components = array('Recaptcha.Recaptcha' => array('actions' => array('add')));
 	
-Component add Recaptcha helper to yout controller automaticaly.
-Component add to your Model validation of recaptcha, if recaptcha is worong it set error message to recaptcha field in your Model.
+Add this to yout view:
+	
+	echo $this->Recaptcha->display();
 
 #### 2) Use without actions -> check recaptcha manualy ####
-Component add Recaptcha helper to your controller automaticaly.
+
+You have to verify captcha manually in your controller.
 
 	public $components = array('Recaptcha.Recaptcha');
 	
@@ -61,7 +65,7 @@ Component add Recaptcha helper to your controller automaticaly.
 	}
 	
 
-### View file: ###
+### Example of view file: ###
 	echo $this->Form->create($model);
 	echo $this->Form->input('username;
 	echo $this->Form->input('email');
