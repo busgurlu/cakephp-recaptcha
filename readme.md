@@ -29,6 +29,9 @@ Add this to your controller:
 
 	public $components = array('Recaptcha.Recaptcha' => array('actions' => array('add')));
 	
+	Component add Recaptcha helper to yout controller automaticaly.
+	Component add to your Model validation of recaptcha, if recaptcha is worong it set error message to recaptcha field in your Model.
+	
 #### 2) Use without actions -> check recaptcha manualy ####
 
 	public $components = array('Recaptcha.Recaptcha'
