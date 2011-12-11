@@ -43,7 +43,10 @@ Add this to your controller:
 
 	public $components = array('Recaptcha.Recaptcha' => array('actions' => array('add', 'delete')));
 	
-Add this to yout view:
+Add actions where you really use Recaptcha.
+Component add to Model validation rules if match current controller->action with array actions.
+
+Add this to your view:
 	
 	echo $this->Recaptcha->display();
 
