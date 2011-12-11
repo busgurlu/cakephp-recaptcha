@@ -6,7 +6,7 @@ Version 1.0
 ## Installation ##
 
 Copy plugin into app/Plugin directory
-Load plugin in app/Config/bootstrap file
+Add following lines in yout app/Config/bootstrap.php file
 	CakePlugin::load('Recaptcha', array('bootstrap' => true));
 
 or if you have more Plugins you can include like this:
@@ -16,6 +16,19 @@ or if you have more Plugins you can include like this:
 	    'AclManager' => array('bootstrap' => true),
 	    'Recaptcha' => array('bootstrap' => true)
 	));
+
+Do not call CakePlugin::loadAll(); beacuse yout bootstrap file will be not included and your plugin will not work correctly.
+
+To use the recaptcha plugin its required to modify these two lines in app/Plugins/recaptcha/Config/bootstrap.php file
+
+	Configure::write('Recaptcha.publicKey', 'your-public-api-key');
+	Configure::write('Recaptcha.privateKey', 'your-private-api-key');
+	
+Don't forget to replace the placeholder text with your actual keys!
+
+Keys can be obtained for free from the [Recaptcha website](http://www.google.com/recaptcha)
+
+Controllers that will be using recaptcha require the Recaptcha Component to be included. Through inclusion of the component, the helper is automatically made available to your views.
 
 ## Use ##
 You need add Recapcha.Recapcha component.
