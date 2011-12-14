@@ -53,6 +53,7 @@ Add this to your view:
 #### 2) Use without actions -> check recaptcha manualy ####
 
 You have to verify captcha manually in your controller.
+Add this to your controller:
 
 	public $components = array('Recaptcha.Recaptcha');
 	
