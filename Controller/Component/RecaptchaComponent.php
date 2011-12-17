@@ -113,11 +113,7 @@ class RecaptchaComponent extends Component {
                 }
                 // Manual mode
             } else {
-                $helper_options['useActions'] = false;
-                if (!$this->verify()) {
-                    $helper_options['error'] = $this->error;
-                }
-                
+                $helper_options['useActions'] = false;   
             }
             $this->Controller->helpers['Recaptcha.Recaptcha'] = $helper_options;
             //debug($this->Controller->helpers);
