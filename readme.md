@@ -55,13 +55,12 @@ If for some reason you decide not to check the Recaptcha, you can opt-out by cal
 	public $components = array('Recaptcha.Recaptcha' => array('actions' => array('add', 'delete')));
 
 	public function add() {
-	    if ($this->request->is('post')) {
-	        $this->User->recaptcha=true;
+		if ($this->request->is('post')) {
+		$this->User->recaptcha=true;
 		if ($this->User->save($this->request->data)) {
-		        // do something, save you data, login, whatever
+			//save action
 		} else {
-		        // display the raw API error
-		        $this->Session->setFlash($this->Recaptcha->error);
+			//fail action
 		}
 	    }
 	}
